@@ -26,11 +26,25 @@ impl<S> Clone for PreparedImage<S> where S: Clone {
     }
 }
 
+/// A buffer that represents an image.
 pub trait ImageBuffer {
+    /// The width of this image.
     fn width(&self) -> usize;
+    /// The height of this image.
     fn height(&self) -> usize;
 
+    /// Returns the pixel located at (x, y). Indexed from top left.
+    ///
+    /// # Panics
+    ///
+    /// Panics if `(x, y)` is out of bounds.
     fn get_pixel(&self, x: usize, y: usize) -> u8;
+
+    /// Sets the value of a piel at (x, y). Indexed from top left.
+    /// 
+    /// # Panics
+    /// 
+    /// Panics if `(x, y)` is out of bounds.
     fn set_pixel(&mut self, x: usize, y: usize, val: u8);
 }
 

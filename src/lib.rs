@@ -36,7 +36,7 @@ pub use self::decode::{MetaData, Version};
 pub(crate) use self::detect::{CapStone, capstones_from_image};
 pub(crate) use self::identify::SkewedGridLocation;
 pub use self::identify::Point;
-pub use self::prepare::{PreparedImage};
+pub use self::prepare::{PreparedImage, ImageBuffer};
 use std::io::Write;
 use std::error::Error;
 
